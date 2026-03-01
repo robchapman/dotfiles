@@ -2,7 +2,7 @@
 export EDITOR=nvim
 export SUDO_EDITOR="$EDITOR"
 export BAT_THEME=ansi
-export PATH="$HOME/.local/bin:$HOME/.npm-global/bin:$PATH"
+export PATH="$HOME/.opencode/bin:$HOME/.local/bin:$HOME/.npm-global/bin:$PATH"
 
 # History control
 shopt -s histappend
@@ -154,6 +154,10 @@ tsl() {
 # Init tools
 if command -v mise &> /dev/null; then
   eval "$(mise activate bash)"
+fi
+
+if command -v direnv &> /dev/null; then
+  eval "$(direnv hook bash)"
 fi
 
 if command -v starship &> /dev/null; then
