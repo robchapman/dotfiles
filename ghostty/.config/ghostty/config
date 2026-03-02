@@ -49,7 +49,16 @@ keybind = super+control+shift+alt+arrow_up=resize_split:up,100
 keybind = super+control+shift+alt+arrow_left=resize_split:left,100
 keybind = super+control+shift+alt+arrow_right=resize_split:right,100
 
-# Cmd+N passthrough for tmux window switching
+# Cmd+N passthrough for tmux window switching (unbind default tab switching first)
+keybind = super+1=unbind
+keybind = super+2=unbind
+keybind = super+3=unbind
+keybind = super+4=unbind
+keybind = super+5=unbind
+keybind = super+6=unbind
+keybind = super+7=unbind
+keybind = super+8=unbind
+keybind = super+9=unbind
 keybind = super+1=text:\x1b[49;9u
 keybind = super+2=text:\x1b[50;9u
 keybind = super+3=text:\x1b[51;9u

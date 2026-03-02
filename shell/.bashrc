@@ -53,6 +53,8 @@ alias cx='printf "\033[2J\033[3J\033[H" && claude --allow-dangerously-skip-permi
 alias d='docker'
 alias r='rails'
 alias t='tmux attach || tmux new -s Work'
+alias start-mast-dev='~/dev/mast/tmp/dev-scripts/dev-start'
+alias stop-mast-dev='~/dev/mast/tmp/dev-scripts/dev-stop'
 n() { if [ "$#" -eq 0 ]; then command nvim . ; else command nvim "$@"; fi; }
 
 # Git
@@ -154,6 +156,8 @@ tsl() {
 # Init tools
 if command -v mise &> /dev/null; then
   eval "$(mise activate bash)"
+elif command -v rbenv &> /dev/null; then
+  eval "$(rbenv init - bash)"
 fi
 
 if command -v direnv &> /dev/null; then
