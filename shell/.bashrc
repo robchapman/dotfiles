@@ -55,6 +55,7 @@ alias r='rails'
 alias t='tmux attach || tmux new -s Work'
 alias start-mast-dev='~/dev/mast/tmp/dev-scripts/dev-start'
 alias stop-mast-dev='~/dev/mast/tmp/dev-scripts/dev-stop'
+alias reset-mast-db='~/dev/mast/tmp/dev-scripts/dev-reset-db'
 n() { if [ "$#" -eq 0 ]; then command nvim . ; else command nvim "$@"; fi; }
 
 # Git
@@ -158,6 +159,13 @@ if command -v mise &> /dev/null; then
   eval "$(mise activate bash)"
 elif command -v rbenv &> /dev/null; then
   eval "$(rbenv init - bash)"
+fi
+
+export NVM_DIR="$HOME/.nvm"
+if [[ -s "$(brew --prefix 2>/dev/null)/opt/nvm/nvm.sh" ]]; then
+  set -h
+  source "$(brew --prefix)/opt/nvm/nvm.sh"
+  set +h
 fi
 
 if command -v direnv &> /dev/null; then

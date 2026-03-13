@@ -67,3 +67,42 @@ alt-shift-tab = 'workspace prev'
 # Resize
 alt-minus = 'resize smart -50'
 alt-equal = 'resize smart +50'
+
+# Second monitor workspaces (ctrl-alt)
+ctrl-alt-1 = 'workspace 11'
+ctrl-alt-2 = 'workspace 12'
+ctrl-alt-4 = 'workspace 14'
+ctrl-alt-5 = 'workspace 15'
+ctrl-alt-6 = 'workspace 16'
+ctrl-alt-7 = 'workspace 17'
+ctrl-alt-8 = 'workspace 18'
+ctrl-alt-9 = 'workspace 19'
+
+# Move to second monitor workspace (ctrl-alt-shift)
+ctrl-alt-shift-1 = 'move-node-to-workspace 11'
+ctrl-alt-shift-2 = 'move-node-to-workspace 12'
+ctrl-alt-shift-4 = 'move-node-to-workspace 14'
+ctrl-alt-shift-5 = 'move-node-to-workspace 15'
+ctrl-alt-shift-6 = 'move-node-to-workspace 16'
+ctrl-alt-shift-7 = 'move-node-to-workspace 17'
+ctrl-alt-shift-8 = 'move-node-to-workspace 18'
+ctrl-alt-shift-9 = 'move-node-to-workspace 19'
+
+# Pin workspaces to monitors
+[workspace-to-monitor-force-assignment]
+1 = 'main'
+2 = 'main'
+4 = 'main'
+5 = 'main'
+6 = 'main'
+7 = 'main'
+8 = 'main'
+9 = 'main'
+11 = 'secondary'
+12 = 'secondary'
+14 = 'secondary'
+15 = 'secondary'
+16 = 'secondary'
+17 = 'secondary'
+18 = 'secondary'
+19 = 'secondary'
