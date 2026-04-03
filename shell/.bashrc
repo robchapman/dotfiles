@@ -1,8 +1,7 @@
 # Environment
 export EDITOR=nvim
 export SUDO_EDITOR="$EDITOR"
-export BAT_THEME=ansi
-export PATH="$HOME/.opencode/bin:$HOME/.local/bin:$HOME/.npm-global/bin:$PATH"
+export BAT_THEME=ansiexport PATH="$HOME/.opencode/bin:$HOME/.local/bin:$HOME/.npm-global/bin:$PATH"
 
 # History control
 shopt -s histappend
@@ -153,6 +152,22 @@ tsl() {
 
   tmux select-pane -t "${panes[0]}"
 }
+
+_tmux_lazygit_layout() {
+  local ai_cmd="$1"
+  [[ -z $TMUX ]] && { echo "You must be in a tmux session."; return 1; }
+  local current_dir="${PWD}"
+  local left_pane
+  left_pane=$(tmux new-window -c "$current_dir" -P -F '#{pane_id}')
+  local right_pane
+  right_pane=$(tmux split-window -h -p 30 -t "$left_pane" -c "$current_dir" -P -F '#{pane_id}')
+  tmux send-keys -t "$right_pane" "$ai_cmd" Enter
+  tmux send-keys -t "$left_pane" 'lazygit' Enter
+  tmux select-pane -t "$left_pane"
+}
+
+clg() { _tmux_lazygit_layout 'claude'; }
+olg()  { _tmux_lazygit_layout 'c'; }
 
 # Init tools
 if command -v mise &> /dev/null; then
