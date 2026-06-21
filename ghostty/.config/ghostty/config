@@ -72,3 +72,6 @@ keybind = super+9=text:\x1b[57;9u
 
 # Slowdown mouse scrolling
 mouse-scroll-multiplier = 0.95
+
+# Platform-specific overrides (only stowed on macOS)
+config-file = ~/.config/ghostty/macos.conf
