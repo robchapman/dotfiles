@@ -1,0 +1,13 @@
+promptToReturnFromSubprocess: false
+
+customCommands:
+  - key: 'V'
+    command: 'nvim {{.SelectedFile.Name}} -c "lua require(\"gitsigns\").toggle_deleted()"'
+    context: 'files'
+    description: 'View file with git diff'
+    output: terminal
+
+git:
+  pagers:
+    - externalDiffCommand: difft --color=always
+    - pager: ""
