@@ -7,3 +7,9 @@ cd ~/Dev/dotfiles
 for pkg in nvim tmux starship git shell ghostty aerospace; do
     stow -v --target="$HOME" "$pkg"
 done
+
+if [[ "$(uname)" == "Darwin" ]]; then
+    stow -v --target="$HOME" ghostty-macos
+fi
+
+lazygit
