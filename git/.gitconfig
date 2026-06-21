@@ -9,3 +9,5 @@
 	rebase = true
 [init]
 	defaultBranch = master
+[core]
+	excludesfile = /Users/rob/.gitignore_global
