@@ -4,11 +4,11 @@ return {
   lazy = false,
   config = function(_, opts)
     require("claudecode").setup(opts)
-    vim.defer_fn(function()
-      vim.cmd("ClaudeCode")
-    end, 500)
   end,
   opts = {
+    snacks_win_opts = {
+      wo = { wrap = true },
+    },
     diff_opts = {
       layout = "vertical",
       open_in_new_tab = true,

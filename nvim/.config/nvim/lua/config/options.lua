@@ -3,3 +3,6 @@
 -- Add any additional options here
 vim.opt.relativenumber = false
 vim.opt.laststatus = 3
+
+-- Disable AI completion ghost text (prevents blink from showing preview)
+vim.g.ai_cmp = false
