@@ -160,7 +160,7 @@ _tmux_lazygit_layout() {
   local left_pane
   left_pane=$(tmux new-window -c "$current_dir" -P -F '#{pane_id}')
   local right_pane
-  right_pane=$(tmux split-window -h -p 30 -t "$left_pane" -c "$current_dir" -P -F '#{pane_id}')
+  right_pane=$(tmux split-window -h -p 50 -t "$left_pane" -c "$current_dir" -P -F '#{pane_id}')
   tmux send-keys -t "$right_pane" "$ai_cmd" Enter
   tmux send-keys -t "$left_pane" 'lazygit' Enter
   tmux select-pane -t "$left_pane"
@@ -204,3 +204,4 @@ if command -v fzf &> /dev/null; then
     source "$(brew --prefix)/opt/fzf/shell/key-bindings.bash"
   fi
 fi
+. "$HOME/.cargo/env"
